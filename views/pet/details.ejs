@@ -1,0 +1,25 @@
+<h1>details Pet</h1>
+<div>
+    <div>
+        <h3><%= pet.name %> </h3>
+        <div>animal: <%= pet.animal %></div>
+        <div>type: <%= pet.breed %></div>
+        <div>age: <%= pet.age %></div>
+        <div>gender: <%= pet.gender %></div>
+        <div>from: <%= pet.from %></div>
+        <div>Created At: <%= moment(pet.createdAt).fromNow() %></div>
+        <div>Updated At: <%= moment(pet.updatedAt).fromNow() %></div>
+    </div>
+
+    <br>
+
+    <% pet.article.forEach(function(article){ %>
+    <hr>
+      <div>
+        <div class="article">Article Name: <%= article.title %></div>
+        <div class="article">Content: <%= article.content %></div>
+        <div class="article">Author: <%= article.author %></div>
+        </div>
+      <% }) %>
+
+</div>

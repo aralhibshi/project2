@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css"
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Pet Magazine</title>
+</head>
+<body>
+    <header class="text-white">
+
+        <% if (currentUser) { %>
+
+            <a href="/article/index" id="headerTitle" class="text-white">Pet Magazine</a>
+            <div>
+                <nav id="navigationBar" class="flex-auto text-white">
+                    <a href="/pet/index"class="relative right-64 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br 
+                    focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 
+                    mb-2"> User Pets</a>
+
+                    <a href="/article/index"class="relative right-64 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Articles</a>
+
+                    <a href="/article/add"class="relative right-64 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Add Article</a>
+
+                     <a href="/pet/add"class="relative right-64 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Add Pet</a>
+
+                    <a href="/auth/logout" class="relative left-64 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Log out</a>
+                
+                    <a href="/user/index" class="relative left-64 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"><%= currentUser.firstName %> <%= currentUser.lastName %></a>
+                   
+                </nav>
+            </div>
+
+               <% } else { %>
+
+                    <a href="/" id="headerTitle" class="text-white"><h1>Pet Magazine</h1></a>
+                <nav id="navigationBar" class="flex-auto">
+                    <a href="/pet/index"class="relative right-64 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"> User Pets</a>
+                    <a href="/auth/signin" class="relative left-64 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Log In</a>
+                    <a href="/auth/signup" class="relative left-64 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Sign Up</a>                
+
+               <% } %>
+            </nav>
+    </header>
+    <hr id="hrLine" class="mt-2">
+    <br>
+
+    <img class="mainBG" src="../images/BG.jpg" alt="BG" width="99%" height="99%">
+   
+    <%- body %>
+
+    <br>
+    <footer class="sign">
+        <hr id="hrLine">
+        <a href="/about/index">About</a>
+        <a href="/about/index">Q&A</a>
+        <a href="/about/index">Related Websites</a>
+        <p>Pet Magazine © 2022</p>
+        <a href="">Terms and Conditions</a>
+    </footer>
+</body>
+</html>
