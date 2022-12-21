@@ -5,7 +5,7 @@ const router= express.Router();
 // router.use(express.urlencoded({ extended: true }));
 
 // Controller
-const articleCntrl = require("../controllers/articles");
+const articleCntrl = require("../Controllers/articles");
 
 // // Routes
 // router.get('/articles/add', articleCntrl.article_create_get);
